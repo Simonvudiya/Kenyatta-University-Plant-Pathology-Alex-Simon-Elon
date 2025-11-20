@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kenyatta University - Department of Plant Pathology</title>
+    <style>
+        :root {
+            --ku-blue: #0033A0;
+            --ku-light-blue: #0056b3;
+            --ku-gold: #FFD700;
+            --white: #ffffff;
+            --light-gray: #f5f5f5;
+            --dark-gray: #333333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-gray);
+            color: var(--dark-gray);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--ku-blue);
+            color: var(--white);
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo {
+            height: 60px;
+            margin-right: 15px;
+        }
+        
+        .university-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .department-name {
+            font-size: 1rem;
+            font-weight: normal;
+            margin-top: 5px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 51, 160, 0.8), rgba(0, 51, 160, 0.9)), url('plant-pathology-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        /* Login Section */
+        .login-section {
+            padding: 3rem 0;
+            background-color: var(--white);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--ku-blue);
+            font-size: 2rem;
+        }
+        
+        .login-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+        
+        .login-card {
+            background-color: var(--light-gray);
+            border-radius: 8px;
+            padding: 2rem;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .login-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-title {
+            color: var(--ku-blue);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--ku-blue);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: center;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            margin-top: 1rem;
+        }
+        
+        .btn:hover {
+            background-color: var(--ku-light-blue);
+        }
+        
+        .toggle-form {
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .toggle-form a {
+            color: var(--ku-blue);
+            text-decoration: none;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        .toggle-form a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 3rem 0;
+            background-color: var(--light-gray);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background-color: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--ku-blue);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            color: var(--ku-blue);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--ku-blue);
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .footer-logo {
+            height: 50px;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links {
+            margin-top: 1rem;
+        }
+        
+        .footer-links a {
+            color: var(--white);
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo-container {
+                margin-bottom: 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+        
+        /* Hidden form classes */
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container">
+                    <img src="ku-logo.png" alt="Kenyatta University Logo" class="logo">
+                    <div>
+                        <div class="university-name">KENYATTA UNIVERSITY</div>
+                        <div class="department-name">Department of Plant Pathology</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Welcome to the Department of Plant Pathology</h1>
+            <p>Advancing knowledge in plant health, disease management, and sustainable agriculture through cutting-edge research and education.</p>
+        </div>
+    </section>
+
+    <!-- Login Section -->
+    <section class="login-section">
+        <div class="container">
+            <h2 class="section-title">Access Your Account</h2>
+            <div class="login-container">
+                <!-- Student Login Card -->
+                <div class="login-card">
+                    <h3 class="card-title">Student Portal</h3>
+                    
+                    <!-- Student Sign In Form -->
+                    <div id="student-signin-form">
+                        <div class="form-group">
+                            <label for="student-email">Email Address</label>
+                            <input type="email" id="student-email" placeholder="Enter your email" autocomplete="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="student-password">Password</label>
+                            <input type="password" id="student-password" placeholder="Enter your password" autocomplete="current-password">
+                        </div>
+                        <button type="button" class="btn" onclick="signIn('student')">Sign In</button>
+                        <div class="toggle-form">
+                            <a href="#" onclick="toggleStudentForm(); return false;">Don't have an account? Create one</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Student Create Account Form -->
+                    <div id="student-create-form" class="hidden">
+                        <div class="form-group">
+                            <label for="student-fullname">Full Name</label>
+                            <input type="text" id="student-fullname" placeholder="Enter your full name" autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="student-id">Student ID</label>
+                            <input type="text" id="student-id" placeholder="Enter your student ID" autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label for="student-new-email">Email Address</label>
+                            <input type="email" id="student-new-email" placeholder="Enter your email" autocomplete="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="student-new-password">Password</label>
+                            <input type="password" id="student-new-password" placeholder="Create a password" autocomplete="new-password">
+                        </div>
+                        <div class="form-group">
+                            <label for="student-confirm-password">Confirm Password</label>
+                            <input type="password" id="student-confirm-password" placeholder="Confirm your password" autocomplete="new-password">
+                        </div>
+                        <button type="button" class="btn" onclick="createAccount('student')">Create Account</button>
+                        <div class="toggle-form">
+                            <a href="#" onclick="toggleStudentForm(); return false;">Already have an account? Sign in</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Lecturer Login Card -->
+                <div class="login-card">
+                    <h3 class="card-title">Lecturer Portal</h3>
+                    
+                    <!-- Lecturer Sign In Form -->
+                    <div id="lecturer-signin-form">
+                        <div class="form-group">
+                            <label for="lecturer-email">Email Address</label>
+                            <input type="email" id="lecturer-email" placeholder="Enter your email" autocomplete="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="lecturer-password">Password</label>
+                            <input type="password" id="lecturer-password" placeholder="Enter your password" autocomplete="current-password">
+                        </div>
+                        <button type="button" class="btn" onclick="signIn('lecturer')">Sign In</button>
+                        <div class="toggle-form">
+                            <a href="#" onclick="toggleLecturerForm(); return false;">Don't have an account? Create one</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Lecturer Create Account Form -->
+                    <div id="lecturer-create-form" class="hidden">
+                        <div class="form-group">
+                            <label for="lecturer-fullname">Full Name</label>
+                            <input type="text" id="lecturer-fullname" placeholder="Enter your full name" autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="lecturer-id">Staff ID</label>
+                            <input type="text" id="lecturer-id" placeholder="Enter your staff ID" autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label for="lecturer-new-email">Email Address</label>
+                            <input type="email" id="lecturer-new-email" placeholder="Enter your email" autocomplete="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="lecturer-new-password">Password</label>
+                            <input type="password" id="lecturer-new-password" placeholder="Create a password" autocomplete="new-password">
+                        </div>
+                        <div class="form-group">
+                            <label for="lecturer-confirm-password">Confirm Password</label>
+                            <input type="password" id="lecturer-confirm-password" placeholder="Confirm your password" autocomplete="new-password">
+                        </div>
+                        <button type="button" class="btn" onclick="createAccount('lecturer')">Create Account</button>
+                        <div class="toggle-form">
+                            <a href="#" onclick="toggleLecturerForm(); return false;">Already have an account? Sign in</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Our Department Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>Academic Programs</h3>
+                    <p>Comprehensive undergraduate and graduate programs in plant pathology and related fields.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔬</div>
+                    <h3>Research Facilities</h3>
+                    <p>State-of-the-art laboratories and field stations for cutting-edge plant disease research.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌱</div>
+                    <h3>Field Work</h3>
+                    <p>Hands-on experience in disease diagnosis, management, and sustainable agriculture practices.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Expert Faculty</h3>
+                    <p>Learn from renowned researchers and educators in the field of plant pathology.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <img src="ku-logo.png" alt="Kenyatta University Logo" class="footer-logo">
+                <p>Department of Plant Pathology</p>
+                <p>Kenyatta University</p>
+                <div class="footer-links">
+                    <a href="#">About Us</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+                <div class="copyright">
+                    &copy; 2025 Kenyatta University. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle between sign in and create account forms for students
+        function toggleStudentForm() {
+            const signInForm = document.getElementById('student-signin-form');
+            const createForm = document.getElementById('student-create-form');
+            
+            if (signInForm.classList.contains('hidden')) {
+                signInForm.classList.remove('hidden');
+                createForm.classList.add('hidden');
+            } else {
+                signInForm.classList.add('hidden');
+                createForm.classList.remove('hidden');
+            }
+        }
+        
+        // Toggle between sign in and create account forms for lecturers
+        function toggleLecturerForm() {
+            const signInForm = document.getElementById('lecturer-signin-form');
+            const createForm = document.getElementById('lecturer-create-form');
+            
+            if (signInForm.classList.contains('hidden')) {
+                signInForm.classList.remove('hidden');
+                createForm.classList.add('hidden');
+            } else {
+                signInForm.classList.add('hidden');
+                createForm.classList.remove('hidden');
+            }
+        }
+        
+        // Sign in function (placeholder - would connect to backend in real implementation)
+        function signIn(userType) {
+            alert(`${userType.charAt(0).toUpperCase() + userType.slice(1)} sign in functionality would be implemented here.`);
+            // In a real implementation, this would validate credentials and redirect to dashboard
+        }
+        
+        // Create account function (placeholder - would connect to backend in real implementation)
+        function createAccount(userType) {
+            alert(`${userType.charAt(0).toUpperCase() + userType.slice(1)} account creation functionality would be implemented here.`);
+            // In a real implementation, this would validate inputs and create a new account
+        }
+    </script>
+</body>
+</html>
